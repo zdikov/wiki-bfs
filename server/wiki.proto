@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message ShortestPathRequest {
+  string url_from = 1;
+  string url_to = 2;
+}
+
+message ShortestPathResponse {
+  repeated string urls = 1;
+}
+
+service Wiki {
+  rpc FindShortestPath(ShortestPathRequest) returns (ShortestPathResponse) {}
+}
